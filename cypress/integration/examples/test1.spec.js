@@ -19,4 +19,7 @@ describe('My first test suite', function (){
       cy.log(logoelement.text()) // basically the same as: const logo=cy.get('.brand'), but
     }) // with variable cypress get confused because of promises
   })
+
+
+
 })
