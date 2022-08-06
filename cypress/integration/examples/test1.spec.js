@@ -15,6 +15,8 @@ describe('My first test suite', function (){
         cy.wrap($el).find('button').click()
       }
     })
+    cy.get('.brand').should('have.text', 'GREENKART')
+
     cy.get('.brand').then(function(logoelement){
       cy.log(logoelement.text()) // basically the same as: const logo=cy.get('.brand'), but
     }) // with variable cypress get confused because of promises

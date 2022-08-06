@@ -7,6 +7,6 @@ module.exports = defineConfig({
     },
     specPattern: 'cypress/integration/examples/*',
     video: false,
-    pageLoadTimeout: 4000
+    pageLoadTimeout: 6000
   },
 });
