@@ -17,5 +17,8 @@ describe('My fourth test suite', function () {
     })
     //open new web page at the same window by removing attr target
     cy.get('#opentab').invoke('removeAttr', 'target').click()
+    cy.url().should('include', 'rahulshettyacademy')
+    cy.go('back')
+
   })
 })
