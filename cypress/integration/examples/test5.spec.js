@@ -2,7 +2,7 @@
 describe('My fourth test suite', function () {
 
   it('my test case', function () {
-    //checkbox
+    //tables
     cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
     cy.wait(5000)
     cy.get('tr td:nth-child(2)').each(($el, index,$list ) => {

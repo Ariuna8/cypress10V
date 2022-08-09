@@ -2,7 +2,7 @@
 describe('My fourth test suite', function () {
 
   it('my test case', function () {
-    //checkbox
+
     cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
     cy.wait(5000)
     cy.get('#alertbtn').click()
