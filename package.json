@@ -7,7 +7,7 @@
     "test": "npx cypress run",
     "headTest": "npm run test --headed",
     "chromeTest": "npm run test -- --browser chrome",
-    "recordDashboardTest": "npm run test --record --key 83e8f6bf-7269-461f-8722-5610cc542142"
+    "recordDashboardTest": "npx cypress run --record --key 27632388-ea39-4adf-90b0-a8163a3f84ca"
   },
   "keywords": [],
   "author": "",
