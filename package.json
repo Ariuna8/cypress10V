@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cy:open": "npx cypress open"
+    "test": "node_modules//.bin//cypress run",
+    "headTest": "npm run test --headed",
+    "chromeTest": "npm run test -- --browser chrome --parallel",
+    "recordDashboardTest": "npm run test --record --key 83e8f6bf-7269-461f-8722-5610cc542142"
   },
   "keywords": [],
   "author": "",
