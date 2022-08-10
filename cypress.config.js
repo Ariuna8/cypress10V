@@ -15,6 +15,7 @@ module.exports = defineConfig({
     },
     retries: {
       runMode: 1,
+      openMode: 3,
     },
     reporter: "mochawesome",
   },
