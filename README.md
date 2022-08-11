@@ -3,12 +3,27 @@ Mochawesome reporter
 2. node_modules/.bin/cypress run - install mocha
 
 1. node_modules/.bin/cypress run - run cypress all tests headless
-2. npx cypress run --record --key 83e8f6bf-7269-461f-8722-5610cc542142 - run in dashboard tests
+2. npx cypress run --record --key #KEY - run in dashboard tests
 3. node_modules/.bin/cypress --spec cypress/integration/examples/test9Framework.spec.js --env url=example --headed
 
-1. Jenkins
-2. freestyle project
-3. write path for local or git repo
-4. parametrized build with different scripts
-5. in configure add build step (execute shell command - it is better with npm) npm run "$script"
-6. build test (run test cases in dashboard) 
+Jenkins
+1. freestyle project
+2. write path for local or git repo
+3. parametrized build with different scripts
+4. in configure add build step (execute shell command - it is better with npm) npm run "$script"
+5. build test (run test cases in dashboard) 
+
+cucumber
+1. npm install --save-dev cypress-cucumber-preprocessor - download 
+2. in config:
+const cucumber = require('cypress-cucumber-preprocessor').default
+setupNodeEvents(on, config) {
+   on('file:preprocessor', cucumber())
+   },
+   specPattern: 'cypress/integration/examples/BDD/*.feature'
+3. in package.json:
+"cypress-cucumber-preprocessor": {
+   "nonGlobalStepDefinitions": true
+   }
+4. in js tests:
+   import { Given } from "cypress-cucumber-preprocessor/steps";

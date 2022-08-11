@@ -1,15 +1,9 @@
 const {defineConfig} = require("cypress");
-
+const cucumber = require('cypress-cucumber-preprocessor').default
 module.exports = defineConfig({
-  projectId: "kgzihd",
-  e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
     chromeWebSecurity: false,
     defaultCommandTimeout: 8000,
     pageLoadTimeout: 30000,
-    specPattern: 'cypress/integration/examples/*',
     env: {
       baseUrl: 'https://rahulshettyacademy.com',
     },
@@ -18,5 +12,11 @@ module.exports = defineConfig({
       openMode: 3,
     },
     reporter: "mochawesome",
+  projectId: "kgzihd",
+  e2e: {
+    specPattern: 'cypress/integration/examples/BDD/*.feature',
+    setupNodeEvents(on, config) {
+      on('file:preprocessor', cucumber())
+    },
   },
 });

@@ -9,11 +9,15 @@
     "chromeTest": "npm run test -- --browser chrome",
     "recordDashboardTest": "npx cypress run --record --key 27632388-ea39-4adf-90b0-a8163a3f84ca"
   },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^10.4.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-iframe": "^1.0.1",
     "mocha": "^10.0.0",
     "mochawesome": "^7.1.3"
