@@ -4,6 +4,7 @@ import ProductPage from "../../../../support/pageObjects/productPage";
 
 const homePage = new HomePage()
 const productPage = new ProductPage()
+let name
 Given('I open ecommerce page', ()=>{
   cy.visit(Cypress.env('baseUrl') + '/angularpractice/')
 })
@@ -51,13 +52,14 @@ Then('Select the country submit and verify Thank you', ()=>{
 // When I fill the form details
 When('i fill the form details', function (dataTable){
   //[bob, male][]
+  name = dataTable.rawTable[1][0]
   homePage.getEditBox().type(dataTable.rawTable[1][0])
   homePage.getGender().select(dataTable.rawTable[1][1])
 })
 
 // Then Validate the forms behaviour
 Then('validate the forms behaviour', function (){
-  homePage.getTwoWADataBinding().should('have.value', this.data.name)
+  homePage.getTwoWADataBinding().should('have.value', name)
   homePage.getEditBox().should('have.attr', 'minlength', '2')
   homePage.getEnterp().should('be.disabled')
   Cypress.config('defaultCommandTimeout', 8000)
