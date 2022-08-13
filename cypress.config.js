@@ -11,10 +11,11 @@ module.exports = defineConfig({
       runMode: 1,
       openMode: 3,
     },
+  attempt: 1,
     reporter: "mochawesome",
   projectId: "kgzihd",
   e2e: {
-    specPattern: 'cypress/integration/examples/BDD/*.feature',
+    specPattern: 'cypress/integration/examples/**/*.js',
     setupNodeEvents(on, config) {
       on('file:preprocessor', cucumber())
     },
